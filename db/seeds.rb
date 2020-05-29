@@ -15,10 +15,19 @@
 # actor = Actor.new(first_name: "Steve", last_name: "Carrell", known_for: "The Office")
 # actor.save
 
-10.times do 
-  Actor.create([{
-  first_name: Faker::Name.name,
-  last_name: 
-  known_for: Faker::Movie
-  }])
-end 
+# 10.times do 
+#   Actor.create([{
+#   first_name: Faker::Name.name,
+#   last_name: 
+#   known_for: Faker::Movie
+#   }])
+# end 
+
+# movie = Movie.new(title: "Wayne's World", year: 1992, plot: "Two wannabe rockstars get a shot at the bigtime.")
+# movie.save
+
+# movie = Movie.new(title: "One Flew Over The Cuckoo's Next", year: 1975, plot: "A prison inmate is resituated in a mental ward where things are even worse." )
+# movie.save
+
+# movie = Movie.new(title: "Harry Potter and the Chamber of Secrets", year: 2002, plot: "Harry rejoins his friends at Hogwarts as a dark threat looms.")
+# movie.save
