@@ -14,5 +14,17 @@ Rails.application.routes.draw do
 
     get "/pure" => "movies#pure"
 
+    #Query Parameters
+
+    get "/single-actor" => "actors#single_actor"
+
+    #URL Segment Parameter 
+
+    get "/single-actor-segment/:first_name" => "actors#single_actor"
+
+    #Body Parameter 
+
+    post "/single-actor-body" => "actors#single_actor"
+
   end
 end
