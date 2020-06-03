@@ -4,27 +4,66 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
-    get "/actors" => "actors#actors_action"
+    # get "/actors" => "actors#actors_action"
 
-    get "/movies" => "movies#movie_action"
+    # get "/movies" => "movies#movie_action"
 
-    get "/each-movie" => "movies#singlemovie_action"
+    # get "/each-movie" => "movies#singlemovie_action"
 
-    get "/take" => "movies#take"
+    # get "/take" => "movies#take"
 
-    get "/pure" => "movies#pure"
+    # get "/pure" => "movies#pure"
 
-    #Query Parameters
+    # #Query Parameters
 
-    get "/single-actor" => "actors#single_actor"
+    # get "/single-actor" => "actors#single_actor"
 
-    #URL Segment Parameter 
+    # #URL Segment Parameter 
 
-    get "/single-actor-segment/:first_name" => "actors#single_actor"
+    # get "/single-actor-segment/:first_name" => "actors#single_actor"
 
-    #Body Parameter 
+    # #Body Parameter 
 
-    post "/single-actor-body" => "actors#single_actor"
+    # post "/single-actor-body" => "actors#single_actor"
+
+    # GET
+    get "/actors" => "actors#index"
+
+    # UPDATE
+    patch "/actors/:id" => "actors#update"
+
+    #SHOW
+    get "/actors/:id" => "actors#show"
+
+    # CREATE
+    post "/actors" => "actors#create"
+
+    #DESTROY  
+    delete "/actors/:id" => "actors#destroy"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    #CREATE
+    post "/movies" => "movies#create"
+
+    #DESTROY
+    delete "/movies/:id" => "movies#destroy"
+
+    #INDEX
+    get "/movies" => "movies#index"
+
 
   end
 end
