@@ -47,13 +47,6 @@ Rails.application.routes.draw do
 
 
 
-
-
-
-
-
-
-
     
     #CREATE
     post "/movies" => "movies#create"
@@ -63,6 +56,12 @@ Rails.application.routes.draw do
 
     #INDEX
     get "/movies" => "movies#index"
+
+    #SHOW
+    get "/movies/:id" => "movies#show"
+
+    #UPDATE
+    patch "/movies/:id" => "movies#update"
 
 
   end

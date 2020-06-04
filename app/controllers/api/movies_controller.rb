@@ -20,7 +20,7 @@ class Api::MoviesController < ApplicationController
   # end
 
   def create
-    @movie = Movie.new(
+    @movies = Movie.new(
       id: params[:id],
       title: params[:title],
       year: params[:year],
@@ -28,19 +28,39 @@ class Api::MoviesController < ApplicationController
       created_at: params[:created_at],
       updated_at: params[:updated_at]
     )
-    @movie.save
+    @movies.save
     render 'show.json.jb'
   end
 
   def destroy
-    @movie = Movie.find_by(id: params[:id])
-    @movie.destroy
+    @movies = Movie.find_by(id: params[:id])
+    @movies.destroy
     render json: {message: "Successfully destroyed!"}
   end
 
-  def index #not done with this one, SHOW, or PATCH yet
-    @movie = Movie.all 
-    render 'show.json.jb'
+  def index 
+    @movies = Movie.all
+    render 'index.json.jb'
   end 
+
+  def show
+    @movies = Movie.find_by(id: params[:id])
+    render 'show.json.jb'
+  end
+
+  def update
+    #Find
+    @movies = Movie.find_by(id: params[:id])
+    #Update
+      @movies.title = params[:title] || @movies.title
+      @movies.year = params[:year] || @movies.year
+      @movies.plot = params[:plot] || @movies.plot
+      @movies.created_at = params[:created_at] || @movies.created_at
+      @movies.updated_at = params[:updated_at] || @movies.updated_at
+      #Save
+      @movies.save
+      #Render
+    render 'show.json.jb'
+  end
 
 end
