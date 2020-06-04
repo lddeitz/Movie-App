@@ -3,5 +3,7 @@
   last_name: @actors.last_name,
   known_for: @actors.known_for,
   created_at: @actors.created_at,
-  updated_at: @actors.updated_at
+  updated_at: @actors.updated_at,
+  gender: @actors.gender,
+  age: @actors.age
 }

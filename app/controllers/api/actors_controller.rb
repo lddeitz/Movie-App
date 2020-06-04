@@ -14,6 +14,8 @@ class Api::ActorsController < ApplicationController
     @actors.known_for = params[:known_for] || @actors.known_for
     @actors.created_at = params[:created_at] || @actors.created_at
     @actors.updated_at = params[:updated_at] || @actors.updated_at
+    @actors.gender = params[:gender] || @actors.gender
+    @actors.age = params[:age] || @actors.age
     #Save
     @actors.save
     #Render
@@ -26,7 +28,9 @@ class Api::ActorsController < ApplicationController
       last_name: params[:last_name],
       known_for: params[:known_for],
       created_at: params[:created_at],
-      updated_at: params[:updated_at]
+      updated_at: params[:updated_at],
+      gender: params[:gender],
+      age: params[:age]
     )
     @actors.save
     render 'show.json.jb'

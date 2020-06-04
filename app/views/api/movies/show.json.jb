@@ -4,5 +4,7 @@
   year: @movies.year,
   plot: @movies.plot,
   created_at: @movies.created_at,
-  updated_at: @movies.updated_at
+  updated_at: @movies.updated_at,
+  director: @movies.director,
+  english: @movies.english
 }

@@ -26,7 +26,9 @@ class Api::MoviesController < ApplicationController
       year: params[:year],
       plot: params[:plot],
       created_at: params[:created_at],
-      updated_at: params[:updated_at]
+      updated_at: params[:updated_at],
+      director: params[:director],
+      english: params[:english]
     )
     @movies.save
     render 'show.json.jb'
@@ -57,6 +59,8 @@ class Api::MoviesController < ApplicationController
       @movies.plot = params[:plot] || @movies.plot
       @movies.created_at = params[:created_at] || @movies.created_at
       @movies.updated_at = params[:updated_at] || @movies.updated_at
+      @movies.director = params[:director] || @movies.director
+      @movies.english = params[:english] || @movies.english
       #Save
       @movies.save
       #Render

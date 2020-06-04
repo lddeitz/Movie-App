@@ -4,6 +4,8 @@
     year: movie.year,
     plot: movie.plot,
     created_at: movie.created_at,
-    updated_at: movie.updated_at
+    updated_at: movie.updated_at,
+    director: movie.director,
+    english: movie.english
   }
 end 
