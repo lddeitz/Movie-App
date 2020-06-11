@@ -16,6 +16,7 @@ class Api::ActorsController < ApplicationController
     @actors.updated_at = params[:updated_at] || @actors.updated_at
     @actors.gender = params[:gender] || @actors.gender
     @actors.age = params[:age] || @actors.age
+    @actors.movie_id = params[:movie_id] || @actors.movie_id 
     #Save
     if @actors.save
     #Render
@@ -33,7 +34,8 @@ class Api::ActorsController < ApplicationController
       created_at: params[:created_at],
       updated_at: params[:updated_at],
       gender: params[:gender],
-      age: params[:age]
+      age: params[:age],
+      movie_id: params[:movie_id]
     )
     if @actors.save
       render 'show.json.jb' #happypath
