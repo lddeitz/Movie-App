@@ -42,12 +42,12 @@ Rails.application.routes.draw do
     delete "/actors/:id" => "actors#destroy"
 
 
+    #POST (for User)
+    post "/users" => "users#create"
 
+    #POST (for Sessions)
+    post "/sessions" => "sessions#create"
 
-
-
-
-    
     #CREATE
     post "/movies" => "movies#create"
 

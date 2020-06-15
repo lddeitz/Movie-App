@@ -1,9 +1,9 @@
 {
-  first_name: @actors.first_name,
-  last_name: @actors.last_name,
-  known_for: @actors.known_for,
-  created_at: @actors.created_at,
-  updated_at: @actors.updated_at,
-  gender: @actors.gender,
-  age: @actors.age
+  first_name: @actor.first_name,
+  last_name: @actor.last_name,
+  known_for: @actor.known_for,
+  created_at: @actor.created_at,
+  updated_at: @actor.updated_at,
+  gender: @actor.gender,
+  age: @actor.age
 }

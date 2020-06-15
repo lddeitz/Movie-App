@@ -1,28 +1,29 @@
 class Api::ActorsController < ApplicationController
 
+  before_action :authenticate_admin, except: [:show, :index]
+
   def index
     @actors = Actor.all.order(age: :desc)
     render 'index.json.jb'
   end
 
   def update
-    #Find
-    @actors = Actor.find_by(id: params[:id])
+    @actor = Actor.find(params[:id])
     #Update
-    @actors.first_name = params[:first_name] || @actors.first_name
-    @actors.last_name = params[:last_name] || @actors.last_name
-    @actors.known_for = params[:known_for] || @actors.known_for
-    @actors.created_at = params[:created_at] || @actors.created_at
-    @actors.updated_at = params[:updated_at] || @actors.updated_at
-    @actors.gender = params[:gender] || @actors.gender
-    @actors.age = params[:age] || @actors.age
-    @actors.movie_id = params[:movie_id] || @actors.movie_id 
+    @actor.first_name = params[:first_name] || @actor.first_name
+    @actor.last_name = params[:last_name] || @actor.last_name
+    @actor.known_for = params[:known_for] || @actor.known_for
+    @actor.created_at = params[:created_at] || @actor.created_at
+    @actor.updated_at = params[:updated_at] || @actor.updated_at
+    @actor.gender = params[:gender] || @actor.gender
+    @actor.age = params[:age] || @actor.age
+    @actor.movie_id = params[:movie_id] || @actor.movie_id 
     #Save
-    if @actors.save
+    if @actor.save
     #Render
       render 'show.json.jb' #happypath
     else 
-      render json: {errors: @actors.errors.full_messages}, status: :unprocessable_entity #sadpath 
+      render json: {errors: @actor.errors.full_messages}, status: :unprocessable_entity #sadpath 
     end 
   end
 
