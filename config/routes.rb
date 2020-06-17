@@ -63,6 +63,9 @@ Rails.application.routes.draw do
     #UPDATE
     patch "/movies/:id" => "movies#update"
 
+    #CREATE
+    post "/moviegenres" => "movie_genres#create"
+
 
   end
 end
