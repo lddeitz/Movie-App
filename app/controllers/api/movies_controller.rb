@@ -31,7 +31,7 @@ class Api::MoviesController < ApplicationController
       english: params[:english]
     )
     if @movies.save #happypath
-      render 'show.json.jb'
+      render 'show.html.erb'
     else
       render json: {errors: @movies.errors.full_messages}, status: :unprocessable_entity
     end 
@@ -50,7 +50,7 @@ class Api::MoviesController < ApplicationController
 
   def show
     @movies = Movie.find_by(id: params[:id])
-    render 'show.json.jb'
+    render 'show.html.erb'
   end
 
   def update
@@ -67,7 +67,7 @@ class Api::MoviesController < ApplicationController
     #Save
     if @movies.save #happypath
     #Render
-      render 'show.json.jb'
+      render 'show.html.erb'
     else #sadpath
       render json: {errors: @movies.errors.full_messages}, status: :unprocessable_entity
     end 

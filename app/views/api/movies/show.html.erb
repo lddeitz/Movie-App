@@ -1,0 +1,13 @@
+<h1>Check out the details on <%= @movies.title %> (<%= @movies.year %>)!</h1>
+
+<h3>Brief Synopsis: <%= @movies.plot %></h3>
+
+<p>Directed by: <% @movies.director%></p>
+
+<form>
+<strong><p>Put your name into the raffle to win a digital copy of this movie!</p></strong>
+<input type="text"><label for ="name">Name</label>
+<input type="email"><label for ="email">Email</label>
+<input type="submit">
+
+</form>
