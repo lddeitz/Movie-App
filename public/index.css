@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap');
+
+.body {
+  font-weight:700;
+  font-family: 'Assistant', sans-serif;
+}
+
+.assistant-400 {
+  font-weight:400; 
+}
+
+.assistant-700 {
+  font-weight:700;
+}
+
+.logo {
+  height: 10%;
+  width: 10%; 
+}
+
+.jumbotron, .jumbotron-fluid {
+  text-align: center;
+  color:white;
+  font-weight:700;
+  background: linear-gradient(rgb(169, 224, 215), rgb(67, 42, 179));
+  opacity: 0.7;
+  font-family: 'Assistant', sans-serif;
+}
+
+.card-group {
+  font-weight:700;
+  font-family: 'Assistant', sans-serif;
+  border-radius: 5px;
+}
