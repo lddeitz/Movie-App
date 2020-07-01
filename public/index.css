@@ -14,8 +14,8 @@
 }
 
 .logo {
-  height: 10%;
-  width: 10%; 
+  height: 30%;
+  width: 30%; 
 }
 
 .jumbotron, .jumbotron-fluid {
@@ -31,4 +31,11 @@
   font-weight:700;
   font-family: 'Assistant', sans-serif;
   border-radius: 5px;
+}
+
+.collapse, .navbar-collapse {
+  color:rgb(184, 43, 160);
+  font-weight:700;
+  font-family: 'Assistant', sans-serif;
+  opacity: 0.7;
 }

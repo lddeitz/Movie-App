@@ -6,4 +6,4 @@ axios.get("https://localhost:3000/api/movies").then(function (response) {
   console.log(e);
 });
 
-console.log("Sanity Check");
+// console.log("Sanity Check");
