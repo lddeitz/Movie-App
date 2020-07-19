@@ -19,8 +19,18 @@ class Api::MoviesController < ApplicationController
   #   render 'pure.json.jb'
   # end
 
+  def index 
+    @movies = Movie.all
+    render 'index.json.jb'
+  end 
+
+  def show
+    @movie = Movie.find_by(id: params[:id])
+    render 'show.json.jb'
+  end
+
   def create
-    @movies = Movie.new(
+    @movie = Movie.new(
       id: params[:id],
       title: params[:title],
       year: params[:year],
@@ -30,10 +40,31 @@ class Api::MoviesController < ApplicationController
       director: params[:director],
       english: params[:english]
     )
-    if @movies.save #happypath
-      render 'show.html.erb'
+    if @movie.save #happypath
+      @movies = Movie.all
+      render 'index.json.jb'
     else
-      render json: {errors: @movies.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @movie.errors.full_messages}, status: :unprocessable_entity
+    end 
+  end
+
+  def update
+    #Find
+    @movie = Movie.find_by(id: params[:id])
+    #Update
+      @movie.title = params[:title] || @movie.title
+      @movie.year = params[:year] || @movie.year
+      @movie.plot = params[:plot] || @movie.plot
+      @movie.created_at = params[:created_at] || @movie.created_at
+      @movie.updated_at = params[:updated_at] || @movie.updated_at
+      @movie.director = params[:director] || @movie.director
+      @movie.english = params[:english] || @movie.english
+    #Save
+    if @movie.save #happypath
+    #Render
+      render 'show.json.jb'
+    else #sadpath
+      render json: {errors: @movie.errors.full_messages}, status: :unprocessable_entity
     end 
   end
 
@@ -41,36 +72,6 @@ class Api::MoviesController < ApplicationController
     @movies = Movie.find_by(id: params[:id])
     @movies.destroy
     render json: {message: "Successfully destroyed!"}
-  end
-
-  def index 
-    @movies = Movie.where(english: true)
-    render 'index.json.jb'
-  end 
-
-  def show
-    @movies = Movie.find_by(id: params[:id])
-    render 'show.html.erb'
-  end
-
-  def update
-    #Find
-    @movies = Movie.find_by(id: params[:id])
-    #Update
-      @movies.title = params[:title] || @movies.title
-      @movies.year = params[:year] || @movies.year
-      @movies.plot = params[:plot] || @movies.plot
-      @movies.created_at = params[:created_at] || @movies.created_at
-      @movies.updated_at = params[:updated_at] || @movies.updated_at
-      @movies.director = params[:director] || @movies.director
-      @movies.english = params[:english] || @movies.english
-    #Save
-    if @movies.save #happypath
-    #Render
-      render 'show.html.erb'
-    else #sadpath
-      render json: {errors: @movies.errors.full_messages}, status: :unprocessable_entity
-    end 
   end
 
 end

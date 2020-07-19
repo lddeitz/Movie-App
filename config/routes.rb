@@ -48,20 +48,20 @@ Rails.application.routes.draw do
     #POST (for Sessions)
     post "/sessions" => "sessions#create"
 
-    #CREATE
-    post "/movies" => "movies#create"
-
-    #DESTROY
-    delete "/movies/:id" => "movies#destroy"
-
     #INDEX
     get "/movies" => "movies#index"
 
     #SHOW
     get "/movies/:id" => "movies#show"
 
+    #CREATE
+    post "/movies" => "movies#create"
+
     #UPDATE
     patch "/movies/:id" => "movies#update"
+
+    #DESTROY
+    delete "/movies/:id" => "movies#destroy"
 
     #CREATE
     post "/moviegenres" => "movie_genres#create"
