@@ -26,44 +26,27 @@ Rails.application.routes.draw do
 
     # post "/single-actor-body" => "actors#single_actor"
 
-    # GET
+    #Actors Routes
     get "/actors" => "actors#index"
-
-    # UPDATE
-    patch "/actors/:id" => "actors#update"
-
-    #SHOW
-    get "/actors/:id" => "actors#show"
-
-    # CREATE
     post "/actors" => "actors#create"
-
-    #DESTROY  
+    get "/actors/:id" => "actors#show"
+    patch "/actors/:id" => "actors#update"
     delete "/actors/:id" => "actors#destroy"
-
-
+    
     #POST (for User)
     post "/users" => "users#create"
 
     #POST (for Sessions)
     post "/sessions" => "sessions#create"
 
-    #INDEX
+    #Movies Routes
     get "/movies" => "movies#index"
-
-    #SHOW
-    get "/movies/:id" => "movies#show"
-
-    #CREATE
     post "/movies" => "movies#create"
-
-    #UPDATE
+    get "/movies/:id" => "movies#show"
     patch "/movies/:id" => "movies#update"
-
-    #DESTROY
     delete "/movies/:id" => "movies#destroy"
 
-    #CREATE
+    #Movie Genres
     post "/moviegenres" => "movie_genres#create"
 
 
